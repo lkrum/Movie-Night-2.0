@@ -93,6 +93,11 @@ form {
     font-size: 1.25rem;
 }
 
+.checksize {
+    width: .9rem;
+    height: .9rem;
+}
+
 #searchBtn {
     background-color: #c269c2;
     font-size: 2rem;
