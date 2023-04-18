@@ -1,3 +1,32 @@
+// need to connect to API data
+//  need function to get search button working
+  // need to save search input in local storage
+    // create search button variable
+    // set variable in localStorage.setItem("search-input", searchInput)
+  // need to save genre checkboxes in local storage
+    // create variable/array for each genre
+      // localStorage.setItem
+  // need to load results page when button is clicked
+    // location.assign(URL)
+  
+// variable expressions
+// var searchBtn = $('#searchBtn');
+// var genreOptions = []
+
+// variables
+// var apiURL = 'streaming-availability.p.rapidapi.com';
+// var apiKey = 'e23f87d15fmsh16684e11bab90f4p17d1eejsnca5dd7a7480b';
+
+// $('#searchBtn').click(getApi() {
+//   fetch(requestUrl)
+//     .then(function (response) {
+//     return response.json();
+//   })
+//     .then(function (data) {
+//       console.log(data);
+// });
+// });
+
 console.log('hello world')
 var searchBtn = document.querySelector('#searchBtn')
 var searchInput = document.querySelector('#input-title');
