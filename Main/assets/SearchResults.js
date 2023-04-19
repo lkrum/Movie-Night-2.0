@@ -34,20 +34,18 @@ fetch('https://streaming-availability.p.rapidapi.com/v2/search/title?title=' + a
     var ratingText = document.createElement('h2');
     document.body.appendChild(ratingText);
     var rating = response.result[i].imdbRating;
-    ratingText.textContent = rating;
+    ratingText.textContent = rating / 10 + '/10';
 
-    // create and populate streaming options element
-    console.log(response.result[i].streamingInfo.us)
-    var streamingOption = Object.keys(response.result[i].streamingInfo.us);
-    console.log(typeof streamingOption)
-    if (typeof streamingOption !== undefined) {
+    
+    var streamingOptionText = document.createElement('h2');
+    document.body.appendChild(streamingOptionText);
+    // undefined streaming options break loop. if they are undefined, page displays 'unavailable'
+    if (typeof response.result[i].streamingInfo.us !== 'undefined') {
+      var streamingOption = response.result[i].streamingInfo.us;
+      var streamingOptionKeyed = Object.keys(streamingOption)
       console.log(streamingOption);
-      var streamingOptionText = document.createElement('h2');
-      document.body.appendChild(streamingOptionText);
-      streamingOptionText.textContent = streamingOption;
-    } else {
-      console.log('fuck you')
-    }
+      streamingOptionText.textContent = streamingOptionKeyed;
+      } else streamingOptionText.textContent = 'Not Available'
 
     // create and populate youtube embed
     var trailer = document.createElement('iframe');
