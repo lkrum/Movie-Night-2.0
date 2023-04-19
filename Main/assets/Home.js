@@ -24,12 +24,14 @@ searchBtn.addEventListener('click', function () {
   title = searchInput.value
   // if a Title has been entered
   if (title.length > 0) {
+    localStorage.removeItem('Genre (send value to API)');
     // send that Title to local storage.
     localStorage.setItem('Movie Title (send value to API)', title);
     // redirect to search results page
     return window.location.assign("./SearchResults.html");
     // if no title has been selected, and a genre has,
   } else {
+    localStorage.removeItem('Movie Title (send value to API)')
     // store the selected radio as a var
     selectedGenre = document.querySelector('input[type="radio"]:checked')
     // convert the var to its value, since that is what will be fed to api.

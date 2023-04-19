@@ -16,9 +16,9 @@ OR
     *  Action, Adult, Adventure, Animation, Biography, Comedy, Crime, Documentary, Drama, Family, Fantasy, Film Noir, Game Show, History, Horror, Music, Musical, News, Reality, Romance, Science Fiction, Short, Sport, Talk Show, Thriller, War, and Western
 3. Hit the submit button
 4. On the results page, you can
-    * Read a brief movie blurb
+    * Read a brief movie synopsis
     * View streaming options
-    * See official IMBDB ratings
+    * See official IMDB ratings
     * Watch the YouTube trailer
 5. Pick a movie and enjoy your night!  
 
