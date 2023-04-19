@@ -19,20 +19,24 @@ var searchInput = document.querySelector('#input-title');
 var genreBtns = document.querySelector('placeholder')
 
 // when you click 'Search'
-searchBtn.addEventListener('click', function() {
+searchBtn.addEventListener('click', function () {
   // user Title input is stored as var.
   title = searchInput.value
   // if a Title has been entered
   if (title.length > 0) {
-      // send that Title to local storage.
-      localStorage.setItem('Movie Title (send value to API)', title);
-      // if no title has been selected, and a genre has,
-      } else {
-        // store the selected radio as a var
-        selectedGenre = document.querySelector('input[type="radio"]:checked')
-        // convert the var to its value, since that is what will be fed to api.
-        genreOutput = selectedGenre.value
-        // send value to local storage.
-        localStorage.setItem('Genre (send value to API)', genreOutput)
+    // send that Title to local storage.
+    localStorage.setItem('Movie Title (send value to API)', title);
+    // redirect to search results page
+    return window.location.assign("./SearchResults.html");
+    // if no title has been selected, and a genre has,
+  } else {
+    // store the selected radio as a var
+    selectedGenre = document.querySelector('input[type="radio"]:checked')
+    // convert the var to its value, since that is what will be fed to api.
+    genreOutput = selectedGenre.value
+    // send value to local storage.
+    localStorage.setItem('Genre (send value to API)', genreOutput);
+    // redirect to search results page
+    return window.location.assign("./SearchResults.html");
   }
 })
