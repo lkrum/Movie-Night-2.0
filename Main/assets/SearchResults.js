@@ -5,7 +5,6 @@
 console.log('hello world')
 var searchBtn = document.querySelector('#searchBtn')
 var searchInput = document.querySelector('#input-title');
-console.log(searchInput.value);
 
 const options = {
   method: 'GET',
@@ -16,19 +15,66 @@ const options = {
 };
 
 // gets search input from local storage
-var actualKeyword = localStorage.getItem('keyword')
+var actualKeyword = localStorage.getItem('Movie Title (send value to API)')
+// var length = response.result.length;
+// var randInt = Math.floor(Math.random * length); 
 // links api information and grabs
 fetch('https://streaming-availability.p.rapidapi.com/v2/search/title?title=' + actualKeyword + '&country=us&show_type=movie&output_language=en', options)
-    .then(response => response.json())
-    .then(response => {
-        for (var i = 0; i < 5; i++) {
-            var movieposter = document.createElement('img')
-            document.body.appendChild(movieposter)
-            console.log(response.result[i])
-            var primaryImageUrl = response.result[i].backdropURLs.original
-            movieposter.src = primaryImageUrl
-            movieposter.style.maxWidth = '30vw'
-        }
-    })
+.then(response => response.json())
+.then(response => {
+  console.log(response);
+  for (var i = 0; i < 10; i++) {
+    // create and populate title element
+    var titleText = document.createElement('h1');
+    document.body.appendChild(titleText);
+    var title = response.result[i].title;
+    titleText.textContent = title;
+    
+    // create and populate IMDB rating element
+    var ratingText = document.createElement('h2');
+    document.body.appendChild(ratingText);
+    var rating = response.result[i].imdbRating;
+    ratingText.textContent = rating;
+
+    // create and populate streaming options element
+    console.log(response.result[i].streamingInfo.us)
+    var streamingOption = Object.keys(response.result[i].streamingInfo.us);
+    console.log(typeof streamingOption)
+    if (typeof streamingOption !== undefined) {
+      console.log(streamingOption);
+      var streamingOptionText = document.createElement('h2');
+      document.body.appendChild(streamingOptionText);
+      streamingOptionText.textContent = streamingOption;
+    } else {
+      console.log('fuck you')
+    }
+
+    // create and populate youtube embed
+    var trailer = document.createElement('iframe');
+    document.body.appendChild(trailer);
+    var youtubeId = response.result[i].youtubeTrailerVideoId;
+    console.log(youtubeId);
+    // https://www.youtube.com/embed/VIDEO_ID_HERE
+
+    // create and populate movie poster element
+    var moviePoster = document.createElement('img');
+    document.body.appendChild(moviePoster);
+    // console.log(response.result[i]);
+    var primaryImageUrl = response.result[i].posterURLs.original;
+    moviePoster.src = primaryImageUrl;
+    moviePoster.style.maxWidth = '30vw';
+    }
+  })
     .catch(err => console.error(err));
 keywordEntry = '';
+
+// // gets genre selection from local storage
+// var genreChoice = localStorage.getItem('Genre (send value to API)');
+// // console.log(genreChoice);
+// // links api information and grabs
+// fetch('https://streaming-availability.p.rapidapi.com/v2/search/basic?country=us&services=netflix%2Cprime.buy%2Chulu.addon.hbo%2Cpeacock.free&output_language=en&show_type=movie&genre=' + genreChoice, options)
+// 	.then(response => response.json())
+// 	.then(response => {
+    
+//   })
+// 	.catch(err => console.error(err));
