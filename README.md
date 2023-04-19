@@ -27,6 +27,7 @@ Our front-end framework was created using a mixture of Bulma, HTML, and CSS.
 - [Streaming Availability](https://rapidapi.com/movie-of-the-night-movie-of-the-night-default/api/streaming-availability)
 - [Worldwide Recipes](https://rapidapi.com/ptwebsolution/api/worldwide-recipes1)
 - [W3schools Location Assign](https://www.w3schools.com/jsref/met_loc_assign.asp)
+- [ChatGPT](https://chat.openai.com/) {Comment added where used}
 
 ## License
 MIT License
