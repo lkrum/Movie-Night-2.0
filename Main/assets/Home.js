@@ -1,55 +1,38 @@
 // need to connect to API data
-//  need function to get search button working
-  // need to save search input in local storage
-    // create search button variable
-    // set variable in localStorage.setItem("search-input", searchInput)
-  // need to save genre checkboxes in local storage
-    // create variable/array for each genre
-      // localStorage.setItem
-  // need to load results page when button is clicked
-    // location.assign(URL)
-  
+//// need function to get search button working
+//// need to save search input in local storage
+//// create search button variable
+//// set variable in localStorage.setItem("search-input", searchInput)
+//// need to save genre checkboxes in local storage
+//// create variable/array for each genre
+//// localStorage.setItem
+// need to load results page when button is clicked
+// location.assign(URL)
+
+// sets variable for search button
 var searchBtn = document.querySelector('#searchBtn');
+
+// sets variable for input box
 var searchInput = document.querySelector('#input-title');
-var genreBtns = document.querySelector(i have no fkn idea)
-// 'Action', 'Adult', 'Adventure', 'Animation', 'Biography', 'Comedy', 'Crime', 'Documentary', 'Drama', 'Family', 'Fantasy', 'Film-Noir', 'Game-Show', 'History', 
-// empty array for genres
-var searchedGenres = [];
-var genreOptions = [
-  {
-    genre: 'Action',
-    id: genre1,
-  }
-];
 
-// var keywordEntry = searchInput.value;
-// localStorage.setItem('keyword', keywordEntry);
-// location.assign('SearchResults.html');
-// });
+// sets variable for genre radios
+var genreBtns = document.querySelector('placeholder')
+
+// when you click 'Search'
 searchBtn.addEventListener('click', function() {
-  if (title) {
-      var keywordEntry = searchInput.value;
-      localStorage.setItem('keyword', keywordEntry);
-      location.assign('SearchResults.html');
-  } else {
-
+  // user Title input is stored as var.
+  title = searchInput.value
+  // if a Title has been entered
+  if (title.length > 0) {
+      // send that Title to local storage.
+      localStorage.setItem('Movie Title (send value to API)', title);
+      // if no title has been selected, and a genre has,
+      } else {
+        // store the selected radio as a var
+        selectedGenre = document.querySelector('input[type="radio"]:checked')
+        // convert the var to its value, since that is what will be fed to api.
+        genreOutput = selectedGenre.value
+        // send value to local storage.
+        localStorage.setItem('Genre (send value to API)', genreOutput)
   }
 })
-
-functionName(i) {
-
-  var genreOption = document.querySelector('#genre' + i).value;
-}
-  // !Get all radio buttons with name="myRadio"
-  // const radioButtons = document.getElementsByName("myRadio");
-
-  // !Loop through radio buttons
-  // radioButtons.forEach((radioButton) => {
-    // !Add event listener for change event
-  //   radioButton.addEventListener("change", () => {
-      // !Check if radio button is selected
-  //     if (radioButton.checked) {
-  //       console.log(`Radio button with value ${radioButton.value} was selected`);
-  //     }
-  //   });
-  // });
