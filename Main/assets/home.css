@@ -1,8 +1,11 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Source Sans Pro', sans-serif;
+}
+
+:root {
     background-color: #fffdd0;
+    font-family: 'Source Sans Pro', sans-serif;
     font-size: 100%;
 }
 
@@ -27,10 +30,9 @@ form {
     align-items: center;
     margin: 0 auto;
     width: 100vw;
-    height: 50vh;
     max-width: 75%;
     max-height: 50%;
-    margin-top: 5rem;
+    /* margin-top: 5rem; */
 }
 
 .flex-column {
@@ -79,6 +81,10 @@ form {
     font-size: 2rem;
 }
 
+.padding-fix {
+    padding: 1rem;
+}
+
 #input-title {
     font-size: 1.25rem;
     width: 30rem;
@@ -86,16 +92,13 @@ form {
     margin-top: .25rem;
     border-color: #272727;
     background-color: white;
+    display: flex;
+    justify-content: center;
 }
 
 .check-padding {
     padding-inline: 1rem !important;
-    font-size: 1.25rem;
-}
-
-.checksize {
-    width: .9rem;
-    height: .9rem;
+    font-size: 1.5rem;
 }
 
 #searchBtn {
