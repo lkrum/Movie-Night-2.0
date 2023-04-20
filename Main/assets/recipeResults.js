@@ -1,4 +1,4 @@
-const options = {
+git const options = {
   method: 'GET',
   headers: {
     'X-RapidAPI-Key': '3d764b43e2msh71ff099b3ea873dp17d159jsn7f3859064a9a',
