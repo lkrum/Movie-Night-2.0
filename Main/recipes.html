@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,13 +10,21 @@
 </head>
 
 <body>
-  <div class="landing-container flex-column">
-    <form class="flex-column">
-      <label class="form-title" for="title">Search Recipes: </label>
-      <input id="input-title" type="text" id="title" name="title" placeholder="snacks">
+
+  <header>
+    <h1 id="search-recipe is-1 has-text-centered has-text-black pb-6 pt-6">Search Recipe</h1>
+  </header>
+  <section>
+    <form class="flex-center">
+      <input id="input-recipe" type="text" name="recipe" placeholder="snacks">
     </form>
-    <button id="searchBtn" type="submit">Search</button>
+  </section>
+  <center>
+    <button id="searchRecipeBtn" type="submit">Search</button>
+  </center>
   </div>
-<script src="./assets/recipes.js"></script>
+
+  <script src="./assets/recipes.js"></script>
 </body>
+
 </html>
