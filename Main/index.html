@@ -1,71 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- font link -->
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap"
+        rel="stylesheet">
     <!-- css link -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="assets/home.css">
     <title>Movie Searcher</title>
 </head>
+
 <body>
-   <header>
-    <h1 class="title is-1 has-text-centered has-text-black pb-6 pt-6">Movie Searcher</h1>
+    <header>
+        <h1 class="title is-1 has-text-centered has-text-black pb-6 pt-6">Movie Searcher</h1>
     </header>
     <section class="section">
         <h2 class="has-text-centered is-size-3 has-text-black pb-1 pt-6">Search by Title:</h2>
-        <form>
-            <input class="input" type="text" placeholder="Title">
+        <form class="flex-center">
+            <input id="input-title" class="input" type="text" placeholder="Title">
         </form>
     </section>
-    <section class="section">   
+    <section class="section landing-container flex-column flex-center pt-1">
         <h2 class="has-text-centered is-size-3 has-text-black">Genre:</h2>
         <br>
-        <div class="control">
-            <label class="radio">
-                <label class="check-padding"><input type="radio" name="genre">Action</label>
-                <label class="check-padding"><input type="radio" name="genre">Adult</label>
-                <label class="check-padding"><input type="radio" name="genre">Adventure</label>
-                <label class="check-padding"><input type="radio" name="genre">Animation</label>
-                <label class="check-padding"><input type="radio" name="genre">Biography</label>
-                <label class="check-padding"><input type="radio" name="genre">Comedy</label>
-                <label class="check-padding"><input type="radio" name="genre">Crime</label>
-                <label class="check-padding"><input type="radio" name="genre">Documentary</label>
-                <label class="check-padding"><input type="radio" name="genre">Drama</label>
-                <label class="check-padding"><input type="radio" name="genre">Family</label>
-                <label class="check-padding"><input type="radio" name="genre">Fantasy</label>
-                <label class="check-padding"><input type="radio" name="genre">Film Noir</label>
-                <label class="check-padding"><input type="radio" name="genre">Game Show</label>
-                <label class="check-padding"><input type="radio" name="genre">History</label>
-                <label class="check-padding"><input type="radio" name="genre">Horror</label>
-                <label class="check-padding"><input type="radio" name="genre">Music</label>
-                <label class="check-padding"><input type="radio" name="genre">Musical</label>
-                <label class="check-padding"><input type="radio" name="genre">Mystery</label>
-                <label class="check-padding"><input type="radio" name="genre">News</label>
-                <label class="check-padding"><input type="radio" name="genre">Reality</label>
-                <label class="check-padding"><input type="radio" name="genre">Romance</label>
-                <label class="check-padding"><input type="radio" name="genre">Science Fiction</label>
-                <label class="check-padding"><input type="radio" name="genre">Short</label>
-                <label class="check-padding"><input type="radio" name="genre">Sport</label>
-                <label class="check-padding"><input type="radio" name="genre">Talk Show</label>
-                <label class="check-padding"><input type="radio" name="genre">Thriller</label>
-                <label class="check-padding"><input type="radio" name="genre">War</label>
-                <label class="check-padding"><input type="radio" name="genre">Western</label>
-                <br>
-            </div>
-           
-        </section> 
-                
-    <section class=section>
+        <form class="radio control flex-row flex-wrap">
+            <label class="check-padding" for="genre1"><input id="genre1" type="radio" name="genre" value="28"> Action</label>
+            <label class="check-padding" for="genre2"><input id="genre2" type="radio" name="genre" value="12"> Adventure</label>
+            <label class="check-padding" for="genre3"><input id="genre3" type="radio" name="genre" value="16"> Animation</label>
+            <label class="check-padding" for="genre4"><input id="genre4" type="radio" name="genre" value="1"> Biography</label>
+            <label class="check-padding" for="genre5"><input id="genre5" type="radio" name="genre" value="35"> Comedy</label>
+            <label class="check-padding" for="genre6"><input id="genre6" type="radio" name="genre" value="80"> Crime</label>
+            <label class="check-padding" for="genre7"><input id="genre7" type="radio" name="genre" value="99"> Documentary</label>
+            <label class="check-padding" for="genre8"><input id="genre8" type="radio" name="genre" value="18"> Drama</label>
+            <label class="check-padding" for="genre9"><input id="genre9" type="radio" name="genre" value="10751"> Family</label>
+            <label class="check-padding" for="genre10"><input id="genre10" type="radio" name="genre" value="14"> Fantasy</label>
+            <label class="check-padding" for="genre11"><input id="genre11" type="radio" name="genre" value="2"> Film Noir</label>
+            <label class="check-padding" for="genre12"><input id="genre12" type="radio" name="genre" value="36"> History</label>
+            <label class="check-padding" for="genre13"><input id="genre13" type="radio" name="genre" value="27"> Horror</label>
+            <label class="check-padding" for="genre14"><input id="genre14" type="radio" name="genre" value="10402"> Music</label>
+            <label class="check-padding" for="genre15"><input id="genre15" type="radio" name="genre" value="4"> Musical</label>
+            <label class="check-padding" for="genre16"><input id="genre16" type="radio" name="genre" value="9648">Mystery</label>
+            <label class="check-padding" for="genre17"><input id="genre17" type="radio" name="genre" value="10763"> News</label>
+            <label class="check-padding" for="genre18"><input id="genre18" type="radio" name="genre" value="10749"> Romance</label>
+            <label class="check-padding" for="genre19"><input id="genre19" type="radio" name="genre" value="878"> Science Fiction</label>
+            <label class="check-padding" for="genre20"><input id="genre20" type="radio" name="genre" value="6"> Short</label>
+            <label class="check-padding" for="genre21"><input id="genre21" type="radio" name="genre" value="5"> Sport</label>
+            <label class="check-padding" for="genre22"><input id="genre22" type="radio" name="genre" value="53"> Thriller</label>
+            <label class="check-padding" for="genre23"><input id="genre23" type="radio" name="genre" value="10752"> War</label>
+            <label class="check-padding" for="genre24"><input id="genre24" type="radio" name="genre" value="37"> Western</label>
+        </form>
+    </section>
         <center>
             <input id="searchBtn" class="button" input type="submit" value="Search">
         </center>
-
-    </section>    
-
-<script src="./assets/Home.js"></script>
+    <script src="./assets/Home.js"></script>
 </body>
+
 </html>
