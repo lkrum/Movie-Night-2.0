@@ -170,6 +170,16 @@ p {
     transition: transform 150ms;
 }
 
+.movie-header {
+    background-color: #c269c2 !important;
+    font-size: 3.5rem;
+    padding: 2rem;
+}
+
+.card-container {
+    margin-top: 20px;
+}
+
 #recipe-page {
     background-color: #c269c2 !important;
     font-size: 3.5rem;
@@ -177,8 +187,9 @@ p {
 }
 
 #search-recipe {
-    font-size: 3rem !important;
+    font-size: 4rem !important;
     padding: 1rem !important;
+    color: black;
 }
 
 #searchRecipeBtn {
@@ -192,13 +203,27 @@ p {
     margin-bottom: 2rem;
 }
 
-#return {
-    font-size: 2rem;
+#searchRecipeBtn:hover {
+    background-color: #863186;
+    ;
 }
 
-.recipe-content {
+.img-container {
     display: flex;
-    flex-wrap: wrap;
+    justify-content: center;
+    margin: 10px;
+}
+
+#popcorn,
+#cookies,
+#remote {
+    border: dashed 6px #c269c2;
+    max-width: 20rem;
+    margin: 10px;
+}
+
+#return {
+    font-size: 2rem;
 }
 
 #input-recipe {
@@ -212,10 +237,34 @@ p {
     justify-content: center;
 }
 
+.recipe-content {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
 #recipe-return {
+    display: flex;
+    justify-content: center !important;
     text-align: center;
     background-color: #c269c2;
     border-radius: 8px;
     border: none;
     padding: 5px;
+    margin: 10px;
+}
+
+#backToMovie {
+    background-color: #c269c2;
+    font-size: 1.5rem;
+    width: 15rem;
+    padding: .5rem;
+    margin: .5rem;
+    transition: box-shadow .5s;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+#backToMovie:hover {
+    background-color: #d3c946;
 }

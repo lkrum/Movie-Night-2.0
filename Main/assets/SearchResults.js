@@ -7,9 +7,6 @@ if (actualKeyword) {
 else {
   genreGrab()
 }
-// need to pull search input and genre checkbox info from local storage and keep it on page
-// getItem
-// need to integrate youtube API into search results
 
 var searchBtn = document.querySelector('#searchBtn')
 var searchInput = document.querySelector('#input-title');
