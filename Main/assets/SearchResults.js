@@ -23,31 +23,41 @@ function titleGrab() {
   const options = {
     method: 'GET',
     headers: {
-      'X-RapidAPI-Key': '0611b75592mshd46c95543061f57p1334b9jsnac720c0d64b4',
+      'X-RapidAPI-Key': 'c460babefcmshc0d3062ab7fe4fcp161d67jsnd2ae94069a50',
       'X-RapidAPI-Host': 'streaming-availability.p.rapidapi.com'
     }
   };
-fetch('https://streaming-availability.p.rapidapi.com/v2/search/title?title=' + actualKeyword + '&country=us&show_type=movie&output_language=en', options)
-.then(response => response.json())
-.then(response => {
-  for (var i = 0; i < 8; i++) {
-    var movieCard = document.getElementById('movie-' + i);
+  fetch('https://streaming-availability.p.rapidapi.com/v2/search/title?title=' + actualKeyword + '&country=us&show_type=movie&output_language=en', options)
+  .then(response => response.json())
+  .then(response => {
+    for (var i = 0; i < 8; i++) {
+    var movieCardInfo = document.getElementById('movie-info-' + i);
+    var moviePosterEl = document.getElementById('movie-poster-' + i);
+    var movieTitleEl = document.getElementById('movie-title-' + i)
+    var overviewEl = document.getElementById('movie-overview-' + i);
 
+    // create and populate movie poster element
+    var moviePoster = document.createElement('img');
+    moviePosterEl.appendChild(moviePoster);
+    var primaryImageUrl = response.result[i].posterURLs.original;
+    moviePoster.src = primaryImageUrl;
+    moviePoster.style.maxWidth = '10vw';
+      
     // create and populate title element
-    var titleText = document.createElement('h1');
-    movieCard.appendChild(titleText);
+    var titleText = document.createElement('h2');
+    movieTitleEl.appendChild(titleText);
     var title = response.result[i].title;
     titleText.textContent = title;
     
     // create and populate IMDB rating element
-    var ratingText = document.createElement('h2');
-    movieCard.appendChild(ratingText);
+    var ratingText = document.createElement('h3');
+    movieCardInfo.appendChild(ratingText);
     var rating = response.result[i].imdbRating;
     ratingText.textContent = 'IMDB Rating: ' + rating / 10 + '/10';
     
     // create and populate streaming options elements and fixes capitalization
-    var streamingOptionText = document.createElement('h2');
-    movieCard.appendChild(streamingOptionText);
+    var streamingOptionText = document.createElement('h3');
+    movieCardInfo.appendChild(streamingOptionText);
     // undefined streaming options break loop. if they are undefined, page displays 'Not Available'
     if (typeof response.result[i].streamingInfo.us !== 'undefined') {
       var streamingOption = response.result[i].streamingInfo.us;
@@ -55,27 +65,22 @@ fetch('https://streaming-availability.p.rapidapi.com/v2/search/title?title=' + a
       streamingOptionText.textContent = 'Streaming Locations: ' + streamingOptionKeyed;
       } else streamingOptionText.textContent = 'Not Available'
 
-    // create and populate youtube embed
-    // !(ChatGPT)
-    var trailer = document.createElement('embed')
-    var youtubeId = response.result[i].youtubeTrailerVideoId;
-    trailer.setAttribute("src", 'https://www.youtube.com/embed/' + youtubeId);
-    trailer.setAttribute("width", "560");
-    trailer.setAttribute("height", "315");
-    movieCard.appendChild(trailer);
+    // // create and populate youtube embed
+    // // !(ChatGPT)
+    // var trailerContainer = document.getElementById('movie-trailer')
+    // var trailer = document.createElement('embed')
+    // var youtubeId = response.result[i].youtubeTrailerVideoId;
+    // trailer.setAttribute("src", 'https://www.youtube.com/embed/' + youtubeId);
+    // trailer.setAttribute("width", "560");
+    // trailer.setAttribute("height", "315");
+    // trailerContainer.appendChild(trailer);
 
     // create and populate overview element
     var overviewText = document.createElement('p');
-    movieCard.appendChild(overviewText);
+    overviewEl.appendChild(overviewText);
     var overview = response.result[i].overview;
     overviewText.textContent = overview;
 
-    // create and populate movie poster element
-    var moviePoster = document.createElement('img');
-    movieCard.appendChild(moviePoster);
-    var primaryImageUrl = response.result[i].posterURLs.original;
-    moviePoster.src = primaryImageUrl;
-    moviePoster.style.maxWidth = '30vw';
     }
   })
     .catch(err => console.error(err));
@@ -88,7 +93,7 @@ function genreGrab() {
   const options = {
     method: 'GET',
     headers: {
-      'X-RapidAPI-Key': '0611b75592mshd46c95543061f57p1334b9jsnac720c0d64b4',
+      'X-RapidAPI-Key': 'c460babefcmshc0d3062ab7fe4fcp161d67jsnd2ae94069a50',
       'X-RapidAPI-Host': 'streaming-availability.p.rapidapi.com'
     }
   };
@@ -96,23 +101,33 @@ fetch('https://streaming-availability.p.rapidapi.com/v2/search/basic?country=us&
 .then(response => response.json())
 .then(response => {
   for (var i = 0; i < 8; i++) {
-    var movieCard = document.getElementById('movie-' + i);
+    var movieCardInfo = document.getElementById('movie-info-' + i);
+    var moviePosterEl = document.getElementById('movie-poster-' + i);
+    var movieTitleEl = document.getElementById('movie-title-' + i)
+    var overviewEl = document.getElementById('movie-overview-' + i);
 
+    // create and populate movie poster element
+    var moviePoster = document.createElement('img');
+    moviePosterEl.appendChild(moviePoster);
+    var primaryImageUrl = response.result[i].posterURLs.original;
+    moviePoster.src = primaryImageUrl;
+    moviePoster.style.maxWidth = '10vw';
+      
     // create and populate title element
-    var titleText = document.createElement('h1');
-    movieCard.appendChild(titleText);
+    var titleText = document.createElement('h2');
+    movieTitleEl.appendChild(titleText);
     var title = response.result[i].title;
     titleText.textContent = title;
     
     // create and populate IMDB rating element
-    var ratingText = document.createElement('h2');
-    movieCard.appendChild(ratingText);
+    var ratingText = document.createElement('h3');
+    movieCardInfo.appendChild(ratingText);
     var rating = response.result[i].imdbRating;
     ratingText.textContent = 'IMDB Rating: ' + rating / 10 + '/10';
     
     // create and populate streaming options elements and fixes capitalization
-    var streamingOptionText = document.createElement('h2');
-    movieCard.appendChild(streamingOptionText);
+    var streamingOptionText = document.createElement('h3');
+    movieCardInfo.appendChild(streamingOptionText);
     // undefined streaming options break loop. if they are undefined, page displays 'Not Available'
     if (typeof response.result[i].streamingInfo.us !== 'undefined') {
       var streamingOption = response.result[i].streamingInfo.us;
@@ -120,27 +135,22 @@ fetch('https://streaming-availability.p.rapidapi.com/v2/search/basic?country=us&
       streamingOptionText.textContent = 'Streaming Locations: ' + streamingOptionKeyed;
       } else streamingOptionText.textContent = 'Not Available'
 
-    // create and populate youtube embed
-    // !(ChatGPT)
-    var trailer = document.createElement('embed')
-    var youtubeId = response.result[i].youtubeTrailerVideoId;
-    trailer.setAttribute("src", 'https://www.youtube.com/embed/' + youtubeId);
-    trailer.setAttribute("width", "560");
-    trailer.setAttribute("height", "315");
-    movieCard.appendChild(trailer);
+    // // create and populate youtube embed
+    // // !(ChatGPT)
+    // var trailerContainer = document.getElementById('movie-trailer')
+    // var trailer = document.createElement('embed')
+    // var youtubeId = response.result[i].youtubeTrailerVideoId;
+    // trailer.setAttribute("src", 'https://www.youtube.com/embed/' + youtubeId);
+    // trailer.setAttribute("width", "560");
+    // trailer.setAttribute("height", "315");
+    // trailerContainer.appendChild(trailer);
 
     // create and populate overview element
     var overviewText = document.createElement('p');
-    movieCard.appendChild(overviewText);
+    overviewEl.appendChild(overviewText);
     var overview = response.result[i].overview;
     overviewText.textContent = overview;
 
-    // create and populate movie poster element
-    var moviePoster = document.createElement('img');
-    movieCard.appendChild(moviePoster);
-    var primaryImageUrl = response.result[i].posterURLs.original;
-    moviePoster.src = primaryImageUrl;
-    moviePoster.style.maxWidth = '30vw';
     }
   })
 	.catch(err => console.error(err));
