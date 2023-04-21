@@ -120,7 +120,7 @@ fetch('https://streaming-availability.p.rapidapi.com/v2/search/basic?country=us&
       var streamingOption = response.result[i].streamingInfo.us;
       var streamingOptionKeyed = Object.keys(streamingOption);
       streamingOptionText.textContent = 'Streaming Locations: ' + streamingOptionKeyed;
-      } else streamingOptionText.textContent = 'Not Available'
+      } else streamingOptionText.textContent = 'Streaming Locations: Not Available'
 
     // create and populate overview element
     var overviewText = document.createElement('p');
