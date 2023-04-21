@@ -28,6 +28,7 @@ Our front-end framework was created using a mixture of Bulma, HTML, and CSS.
 - [Worldwide Recipes](https://rapidapi.com/ptwebsolution/api/worldwide-recipes1)
 - [W3schools Location Assign](https://www.w3schools.com/jsref/met_loc_assign.asp)
 - [ChatGPT](https://chat.openai.com/) {Comment added where used}
+- [GeeksforGeeks](https://www.geeksforgeeks.org/how-to-create-a-link-in-javascript/#)
 
 ## License
 MIT License
