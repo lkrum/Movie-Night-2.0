@@ -6,6 +6,8 @@ We made a movie search app using the [Streaming Availability](https://rapidapi.c
 
 Link to live page: https://lkrum.github.io/Movie-Night/
 
+![Gif](./Main/assets/images/Movie%20Searcher.gif)
+
 ## Installation
 N/A
 
@@ -24,7 +26,7 @@ OR
 5. Pick a movie--and maybe a snack!--and enjoy your night!  
 
 ## Credits 
-Our front-end framework was created using a mixture of Bulma, HTML, and CSS. All images were sourced from UnSplash.
+Our front-end framework was created using a mixture of Bulma, HTML, and CSS. All images were sourced from Unsplash.
 - [Streaming Availability](https://rapidapi.com/movie-of-the-night-movie-of-the-night-default/api/streaming-availability)
 - [Worldwide Recipes](https://rapidapi.com/ptwebsolution/api/worldwide-recipes1)
 - [W3schools Location Assign](https://www.w3schools.com/jsref/met_loc_assign.asp)
