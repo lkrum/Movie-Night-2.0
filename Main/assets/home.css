@@ -149,7 +149,7 @@ p {
     font-size: 1.5rem;
 }
 
-#searchBtn {
+.buttonStyle {
     background-color: #c269c2;
     font-size: 2rem;
     width: 20rem;
@@ -158,14 +158,14 @@ p {
     transition: box-shadow .5s;
 }
 
-#searchBtn:hover {
+.buttonStyle:hover {
     cursor: pointer;
     box-shadow: 0 0 11px rgba(33, 33, 33, .2);
     transform: translateY(-.1rem);
     transition: tranform 150ms;
 }
 
-#searchBtn:active {
+.buttonStyle:active {
     transform: translateY(.1rem);
     transition: transform 150ms;
 }
@@ -176,8 +176,9 @@ p {
     padding: 2rem;
 }
 
-.card-container {
-    margin-top: 20px;
+.buttons {
+    display: flex;
+    justify-content: center;
 }
 
 #recipe-page {
@@ -190,22 +191,6 @@ p {
     font-size: 4rem !important;
     padding: 1rem !important;
     color: black;
-}
-
-#searchRecipeBtn {
-    background-color: #c269c2;
-    font-size: 2rem;
-    width: 20rem;
-    padding: .5rem;
-    margin: .5rem;
-    transition: box-shadow .5s;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-}
-
-#searchRecipeBtn:hover {
-    background-color: #863186;
-    ;
 }
 
 .img-container {
@@ -248,6 +233,7 @@ p {
 
 }
 
+
 .recipe-container-style {
     display: flex;
     flex-direction: column;
@@ -256,31 +242,5 @@ p {
     width: 70vw;
     margin: 2rem;
     padding: 0.5rem
-    
-}
+    }
 
-#recipe-return {
-    display: flex;
-    justify-content: center !important;
-    text-align: center;
-    background-color: #c269c2;
-    border-radius: 8px;
-    border: none;
-    padding: 5px;
-    margin: 10px;
-}
-
-#backToMovie {
-    background-color: #c269c2;
-    font-size: 1.5rem;
-    width: 15rem;
-    padding: .5rem;
-    margin: .5rem;
-    transition: box-shadow .5s;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-}
-
-#backToMovie:hover {
-    background-color: #d3c946;
-}
