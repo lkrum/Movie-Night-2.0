@@ -62,16 +62,6 @@ function titleGrab() {
       streamingOptionText.textContent = 'Streaming Locations: ' + streamingOptionKeyed;
       } else streamingOptionText.textContent = 'Not Available'
 
-    // // create and populate youtube embed
-    // // !(ChatGPT)
-    // var trailerContainer = document.getElementById('movie-trailer')
-    // var trailer = document.createElement('embed')
-    // var youtubeId = response.result[i].youtubeTrailerVideoId;
-    // trailer.setAttribute("src", 'https://www.youtube.com/embed/' + youtubeId);
-    // trailer.setAttribute("width", "560");
-    // trailer.setAttribute("height", "315");
-    // trailerContainer.appendChild(trailer);
-
     // create and populate overview element
     var overviewText = document.createElement('p');
     overviewEl.appendChild(overviewText);
@@ -131,16 +121,6 @@ fetch('https://streaming-availability.p.rapidapi.com/v2/search/basic?country=us&
       var streamingOptionKeyed = Object.keys(streamingOption);
       streamingOptionText.textContent = 'Streaming Locations: ' + streamingOptionKeyed;
       } else streamingOptionText.textContent = 'Not Available'
-
-    // // create and populate youtube embed
-    // // !(ChatGPT)
-    // var trailerContainer = document.getElementById('movie-trailer')
-    // var trailer = document.createElement('embed')
-    // var youtubeId = response.result[i].youtubeTrailerVideoId;
-    // trailer.setAttribute("src", 'https://www.youtube.com/embed/' + youtubeId);
-    // trailer.setAttribute("width", "560");
-    // trailer.setAttribute("height", "315");
-    // trailerContainer.appendChild(trailer);
 
     // create and populate overview element
     var overviewText = document.createElement('p');
