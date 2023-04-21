@@ -237,10 +237,26 @@ p {
     justify-content: center;
 }
 
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .recipe-content {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
 
+}
+
+.recipe-container-style {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-style: double;
+    width: 70vw;
+    margin: 2rem;
+    padding: 0.5rem
+    
 }
 
 #recipe-return {

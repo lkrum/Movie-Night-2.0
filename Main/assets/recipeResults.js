@@ -1,7 +1,7 @@
 const options = {
   method: 'GET',
   headers: {
-    'X-RapidAPI-Key': '0611b75592mshd46c95543061f57p1334b9jsnac720c0d64b4',
+    'X-RapidAPI-Key': 'cee5de46b0msh2b762e13632954cp127afajsnca4144967f8a',
     'X-RapidAPI-Host': 'worldwide-recipes1.p.rapidapi.com'
   }
 };
@@ -14,7 +14,8 @@ fetch('https://worldwide-recipes1.p.rapidapi.com/api/search?q=' + searchResults,
     // grabbing search result from local storage
     for (var i = 0; i < 10; i++) {
       // creating elements to contain recipes 
-      var recipeContainerEl = document.querySelector('.recipe-container');
+      var recipeContainerEl = document.querySelector('.recipe-container-' + i);
+      var foodimgcontainer = document.querySelector('.food-img-' + i)
       var recipeTitleEl = document.createElement('h2');
 
       // looping through each recipe so all of them display on the page
@@ -37,7 +38,7 @@ fetch('https://worldwide-recipes1.p.rapidapi.com/api/search?q=' + searchResults,
 
       // getting the recipe image
       var recipeImageEl = document.createElement('img');
-      recipeContainerEl.appendChild(recipeImageEl);
+      foodimgcontainer.appendChild(recipeImageEl);
       var recipeImage = feedRes.display.images;
       recipeImageEl.src = recipeImage;
       recipeImageEl.style.maxWidth = '20vw'
