@@ -202,13 +202,15 @@ p {
 
 .Btn {
     color: white;
+    text-align: center;
     font-size: 1rem;
     background-color: #c269c2;
     font-size: 1.3rem;
     width: 10rem;
     font-family: Arial, Helvetica, sans-serif;
     padding: .5rem;
-    margin: .5rem;
+    margin: 20px 10px 0 10px;
+    text-decoration: none;
 
 }
 
