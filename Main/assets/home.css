@@ -4,7 +4,7 @@
 }
 
 :root {
-    background-color: #fffdd0;
+    background-color: rgb(255, 254, 229);
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 100%;
     color: black !important;
@@ -12,12 +12,35 @@
 
 header {
     text-align: center;
+    background-image: linear-gradient(to right, #a14ca1, #c269c2, #e38be3, #e3a3e3, #efaeef, #e3a3e3, #e38be3, #c269c2, #a14ca1);
+    padding: 15px 10px 0px 10px;
 }
 
 header h1 {
-    background-color: #c269c2 !important;
-    font-size: 3.25rem;
-    padding: 4rem;
+    position: relative;
+    color: rgb(62, 62, 62);
+    font-size: 4.5rem;
+    letter-spacing: -1.5px;
+    font-family: 'Overpass', sans-serif;
+    margin: 0;
+    padding: 0;
+    margin-bottom: -20px;
+}
+
+header h2 {
+    position: relative;
+    color: #964a95;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 1.5rem;
+    letter-spacing: -1px;
+    padding-bottom: 15px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#search {
+    padding: 0px;
+    margin: 0px;
 }
 
 form {
