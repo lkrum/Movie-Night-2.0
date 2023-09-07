@@ -13,7 +13,7 @@
 header {
     text-align: center;
     background-image: linear-gradient(to right, #a14ca1, #c269c2, #e38be3, #e3a3e3, #efaeef, #e3a3e3, #e38be3, #c269c2, #a14ca1);
-    padding: 15px 10px 0px 10px;
+    padding: 10px 10px 10px 10px;
 }
 
 header h1 {
@@ -24,7 +24,6 @@ header h1 {
     font-family: 'Overpass', sans-serif;
     margin: 0;
     padding: 0;
-    margin-bottom: -20px;
 }
 
 header h2 {
@@ -46,7 +45,8 @@ header h2 {
     font-weight: 700;
     color: #90248f;
 }
-.light  {
+
+.light {
     color: #ca52c6;
 }
 
@@ -200,6 +200,23 @@ p {
     justify-content: center;
 }
 
+.Btn {
+    color: white;
+    font-size: 1rem;
+    background-color: #c269c2;
+    font-size: 1.3rem;
+    width: 10rem;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: .5rem;
+    margin: .5rem;
+
+}
+
+.Btn:hover {
+    transition: box-shadow .5s;
+    background-color: #d894e0;
+}
+
 #searchBtn {
     margin-bottom: 50px;
     color: white;
@@ -223,7 +240,7 @@ p {
 
 .buttonStyle:hover {
     cursor: pointer;
-    box-shadow: 0 0 11px rgba(33, 33, 33, .2);
+    background-color: #d894e0;
     transform: translateY(-.1rem);
     transition: tranform 150ms;
 }
