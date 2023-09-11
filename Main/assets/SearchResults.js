@@ -25,53 +25,54 @@ function titleGrab() {
     }
   };
   fetch('https://streaming-availability.p.rapidapi.com/v2/search/title?title=' + actualKeyword + '&country=us&show_type=movie&output_language=en', options)
-  .then(response => response.json())
-  .then(response => {
-    for (var i = 0; i < 8; i++) {
-    var movieCardInfo = document.getElementById('movie-info-' + i);
-    var moviePosterEl = document.getElementById('movie-poster-' + i);
-    var movieTitleEl = document.getElementById('movie-title-' + i)
-    var overviewEl = document.getElementById('movie-overview-' + i);
+    .then(response => response.json())
+    .then(response => {
+      for (var i = 0; i < 8; i++) {
+        var streamingEl = document.getElementById('streaming-' + i);
+        var ratingEl = document.getElementById('rating-' + i);
+        var moviePosterEl = document.getElementById('movie-poster-' + i);
+        var movieTitleEl = document.getElementById('movie-title-' + i)
+        var overviewEl = document.getElementById('movie-overview-' + i);
 
-    // create and populate movie poster element
-    var moviePoster = document.createElement('img');
-    moviePosterEl.appendChild(moviePoster);
-    var primaryImageUrl = response.result[i].posterURLs.original;
-    moviePoster.src = primaryImageUrl;
-    moviePoster.style.maxWidth = '10vw';
-      
-    // create and populate title element
-    var titleText = document.createElement('h2');
-    movieTitleEl.appendChild(titleText);
-    var title = response.result[i].title;
-    titleText.textContent = title;
-    
-    // create and populate IMDB rating element
-    var ratingText = document.createElement('h3');
-    movieCardInfo.appendChild(ratingText);
-    var rating = response.result[i].imdbRating;
-    ratingText.textContent = 'IMDB Rating: ' + rating / 10 + '/10';
-    
-    // create and populate streaming options elements and fixes capitalization
-    var streamingOptionText = document.createElement('h3');
-    movieCardInfo.appendChild(streamingOptionText);
-    // undefined streaming options break loop. if they are undefined, page displays 'Not Available'
-    if (typeof response.result[i].streamingInfo.us !== 'undefined') {
-      var streamingOption = response.result[i].streamingInfo.us;
-      var streamingOptionKeyed = Object.keys(streamingOption);
-      streamingOptionText.textContent = 'Streaming Locations: ' + streamingOptionKeyed;
-      } else streamingOptionText.textContent = 'Not Available'
+        // create and populate movie poster element
+        var moviePoster = document.createElement('img');
+        moviePosterEl.appendChild(moviePoster);
+        var primaryImageUrl = response.result[i].posterURLs.original;
+        moviePoster.src = primaryImageUrl;
+        moviePoster.style.maxWidth = '10vw';
 
-    // create and populate overview element
-    var overviewText = document.createElement('p');
-    overviewEl.appendChild(overviewText);
-    var overview = response.result[i].overview;
-    overviewText.textContent = overview;
+        // create and populate title element
+        var titleText = document.createElement('h2');
+        movieTitleEl.appendChild(titleText);
+        var title = response.result[i].title;
+        titleText.textContent = title;
 
-    }
-  })
+        // create and populate IMDB rating element
+        var ratingText = document.createElement('h3');
+        ratingEl.appendChild(ratingText);
+        var rating = response.result[i].imdbRating;
+        ratingText.textContent = 'IMDB Rating: ' + rating / 10 + '/10';
+
+        // create and populate streaming options elements and fixes capitalization
+        var streamingOptionText = document.createElement('h3');
+        streamingEl.appendChild(streamingOptionText);
+        // undefined streaming options break loop. if they are undefined, page displays 'Not Available'
+        if (typeof response.result[i].streamingInfo.us !== 'undefined') {
+          var streamingOption = response.result[i].streamingInfo.us;
+          var streamingOptionKeyed = Object.keys(streamingOption);
+          streamingOptionText.textContent = 'Streaming Locations: ' + streamingOptionKeyed;
+        } else streamingOptionText.textContent = 'Not Available'
+
+        // create and populate overview element
+        var overviewText = document.createElement('p');
+        overviewEl.appendChild(overviewText);
+        var overview = response.result[i].overview;
+        overviewText.textContent = overview;
+
+      }
+    })
     .catch(err => console.error(err));
-keywordEntry = '';
+  keywordEntry = '';
 }
 
 // gets genre selection from local storage
@@ -84,51 +85,52 @@ function genreGrab() {
       'X-RapidAPI-Host': 'streaming-availability.p.rapidapi.com'
     }
   };
-fetch('https://streaming-availability.p.rapidapi.com/v2/search/basic?country=us&services=netflix%2Cprime.buy%2Chulu.addon.hbo%2Cpeacock.free&output_language=en&show_type=movie&genre=' + genreChoice, options)
-.then(response => response.json())
-.then(response => {
-  for (var i = 0; i < 8; i++) {
-    var movieCardInfo = document.getElementById('movie-info-' + i);
-    var moviePosterEl = document.getElementById('movie-poster-' + i);
-    var movieTitleEl = document.getElementById('movie-title-' + i)
-    var overviewEl = document.getElementById('movie-overview-' + i);
+  fetch('https://streaming-availability.p.rapidapi.com/v2/search/basic?country=us&services=netflix%2Cprime.buy%2Chulu.addon.hbo%2Cpeacock.free&output_language=en&show_type=movie&genre=' + genreChoice, options)
+    .then(response => response.json())
+    .then(response => {
+      for (var i = 0; i < 8; i++) {
+        var streamingInfoEl = document.getElementById('streaming-' + i);
+        var ratingInfoEl = document.getElementById('rating-' + i);
+        var moviePosterEl = document.getElementById('movie-poster-' + i);
+        var movieTitleEl = document.getElementById('movie-title-' + i)
+        var overviewEl = document.getElementById('movie-overview-' + i);
 
-    // create and populate movie poster element
-    var moviePoster = document.createElement('img');
-    moviePosterEl.appendChild(moviePoster);
-    var primaryImageUrl = response.result[i].posterURLs.original;
-    moviePoster.src = primaryImageUrl;
-    moviePoster.style.maxWidth = '10vw';
-      
-    // create and populate title element
-    var titleText = document.createElement('h2');
-    movieTitleEl.appendChild(titleText);
-    var title = response.result[i].title;
-    titleText.textContent = title;
-    
-    // create and populate IMDB rating element
-    var ratingText = document.createElement('h3');
-    movieCardInfo.appendChild(ratingText);
-    var rating = response.result[i].imdbRating;
-    ratingText.textContent = 'IMDB Rating: ' + rating / 10 + '/10';
-    
-    // create and populate streaming options elements and fixes capitalization
-    var streamingOptionText = document.createElement('h3');
-    movieCardInfo.appendChild(streamingOptionText);
-    // undefined streaming options break loop. if they are undefined, page displays 'Not Available'
-    if (typeof response.result[i].streamingInfo.us !== 'undefined') {
-      var streamingOption = response.result[i].streamingInfo.us;
-      var streamingOptionKeyed = Object.keys(streamingOption);
-      streamingOptionText.textContent = 'Streaming Locations: ' + streamingOptionKeyed;
-      } else streamingOptionText.textContent = 'Streaming Locations: Not Available'
+        // create and populate movie poster element
+        var moviePoster = document.createElement('img');
+        moviePosterEl.appendChild(moviePoster);
+        var primaryImageUrl = response.result[i].posterURLs.original;
+        moviePoster.src = primaryImageUrl;
+        moviePoster.style.maxWidth = '10vw';
 
-    // create and populate overview element
-    var overviewText = document.createElement('p');
-    overviewEl.appendChild(overviewText);
-    var overview = response.result[i].overview;
-    overviewText.textContent = overview;
+        // create and populate title element
+        var titleText = document.createElement('h2');
+        movieTitleEl.appendChild(titleText);
+        var title = response.result[i].title;
+        titleText.textContent = title;
 
-    }
-  })
-	.catch(err => console.error(err));
+        // // create and populate IMDB rating element
+        var ratingText = document.createElement('h3');
+        ratingInfoEl.appendChild(ratingText);
+        var rating = response.result[i].imdbRating;
+        ratingInfoEl.textContent = 'IMDB Rating: ' + rating / 10 + '/10';
+
+        // create and populate streaming options elements and fixes capitalization
+        // var streamingOptionText = document.createElement('h3');
+        // streamingInfEl.appendChild(streamingOptionText);
+        // undefined streaming options break loop. if they are undefined, page displays 'Not Available'
+        if (typeof response.result[i].streamingInfo.us !== 'undefined') {
+          var streamingOption = response.result[i].streamingInfo.us;
+          var streamingOptionKeyed = Object.keys(streamingOption);
+          streamingInfoEl.textContent = 'Streaming Locations: ' + streamingOptionKeyed;
+        } else streamingOptionText.textContent = 'Streaming Locations: Not Available'
+
+        // create and populate overview element
+        var overviewText = document.createElement('p');
+        overviewEl.appendChild(overviewText);
+        var overview = response.result[i].overview;
+        overviewText.textContent = overview;
+
+      }
+    })
+    .catch(err => console.error(err));
 }
