@@ -13,34 +13,35 @@ fetch('https://worldwide-recipes1.p.rapidapi.com/api/search?q=' + searchResults,
     console.log(response);
     // grabbing search result from local storage
     for (var i = 0; i < 10; i++) {
-      // creating elements to contain recipes 
-      var recipeContainerEl = document.querySelector('.recipe-container-' + i);
-      var foodimgcontainer = document.querySelector('.food-img-' + i)
-      var recipeTitleEl = document.createElement('h2');
+      // // creating elements to contain recipes 
+      // var recipeContainerEl = document.querySelector('.recipe-container-' + i);
+      var foodimgcontainer = document.querySelector('#food-img-' + i)
+      var cardBody = document.getElementById("card-body-" + i);
+      var recipeContainerEl = document.getElementById("recipe-title-" + i)
+
 
       // looping through each recipe so all of them display on the page
       var feedRes = response.results.feed[i]
       // getting the recipe title
       var recipeTitle = feedRes.display.displayName;
-      console.log(feedRes)
-      recipeTitleEl.textContent = recipeTitle;
+      console.log(feedRes);
+      var recipeTitleEl = document.createElement('h1');
       recipeContainerEl.appendChild(recipeTitleEl);
+      recipeTitleEl.textContent = recipeTitle;
 
       // getting the recipe URL
       var recipeSourceEl = document.createElement('a');
       recipeContainerEl.appendChild(recipeSourceEl);
       var sourceEl = feedRes.display.source.sourceRecipeUrl;
-      console.log(sourceEl)
-      // referenced GeeksforGeeks article for the .href method
       recipeSourceEl.href = sourceEl;
       recipeSourceEl.appendChild(recipeTitleEl)
-      console.log(recipeSourceEl)
 
       // getting the recipe image
       var recipeImageEl = document.createElement('img');
-      foodimgcontainer.appendChild(recipeImageEl);
       var recipeImage = feedRes.display.images;
       recipeImageEl.src = recipeImage;
-      recipeImageEl.style.maxWidth = '20vw'
+      recipeImageEl.style.maxWidth = '18rem'
+      foodimgcontainer.appendChild(recipeImageEl);
+
     }
   })

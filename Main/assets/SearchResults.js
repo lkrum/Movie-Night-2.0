@@ -20,7 +20,7 @@ function titleGrab() {
   const options = {
     method: 'GET',
     headers: {
-      'X-RapidAPI-Key': 'c460babefcmshc0d3062ab7fe4fcp161d67jsnd2ae94069a50',
+      'X-RapidAPI-Key': 'df396a02a4mshd490c0b96542404p1c76a0jsn5ac1a117da04',
       'X-RapidAPI-Host': 'streaming-availability.p.rapidapi.com'
     }
   };

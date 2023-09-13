@@ -316,7 +316,6 @@ p {
 
 }
 
-
 .recipe-container-style {
     display: flex;
     flex-direction: column;
@@ -325,4 +324,9 @@ p {
     width: 70vw;
     margin: 2rem;
     padding: 0.5rem
+}
+
+.recipeTitle {
+    font-size: 20px;
+    font-weight: 700;
 }
