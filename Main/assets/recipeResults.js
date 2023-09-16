@@ -1,7 +1,7 @@
 const options = {
   method: 'GET',
   headers: {
-    'X-RapidAPI-Key': 'cee5de46b0msh2b762e13632954cp127afajsnca4144967f8a',
+    'X-RapidAPI-Key': 'df396a02a4mshd490c0b96542404p1c76a0jsn5ac1a117da04',
     'X-RapidAPI-Host': 'worldwide-recipes1.p.rapidapi.com'
   }
 };
@@ -16,18 +16,25 @@ fetch('https://worldwide-recipes1.p.rapidapi.com/api/search?q=' + searchResults,
       // // creating elements to contain recipes 
       // var recipeContainerEl = document.querySelector('.recipe-container-' + i);
       var foodimgcontainer = document.querySelector('#food-img-' + i)
-      var cardBody = document.getElementById("card-body-" + i);
+      var recipeTimeContainerEl = document.getElementById("recipe-time-" + i);
       var recipeContainerEl = document.getElementById("recipe-title-" + i)
-
 
       // looping through each recipe so all of them display on the page
       var feedRes = response.results.feed[i]
+      
       // getting the recipe title
       var recipeTitle = feedRes.display.displayName;
       console.log(feedRes);
-      var recipeTitleEl = document.createElement('h1');
+      var recipeTitleEl = document.createElement('h3');
       recipeContainerEl.appendChild(recipeTitleEl);
       recipeTitleEl.textContent = recipeTitle;
+
+      // getting the recipe time
+      var recipeTime = feedRes.content.details.totalTime;
+      console.log(feedRes);
+      var recipeTimeEl = document.createElement('li');
+      recipeTimeContainerEl.appendChild(recipeTimeEl);
+      recipeTimeEl.textContent = "Time: " + recipeTime;
 
       // getting the recipe URL
       var recipeSourceEl = document.createElement('a');
